@@ -1,7 +1,5 @@
-//const dbusername = 'postgres';
-//const dbpassword = 'admin123';
-const dbport = '5432';
-const databaseName = 'postgres';
-const postgresUrl= `postgres://postgres:abc@localhost:${dbport}/${databaseName}`;
-const Sequelize = require('sequelize');
-const sequelize = new Sequelize(postgresUrl)
+const Sequelize = require("sequelize");
+const db = new Sequelize("postgres://postgres:Octb5@iie@localhost/uni");
+// const Dog = require("./dogs");
+
+module.exports = db

@@ -17,7 +17,7 @@ const { MissingPeople } = require("./models")
 app.use(bodyParse.json());
 app.use(bodyParse.urlencoded());
 
-app.use("/config", require("./config"));
+app.use("/api", require("./api"));
 
 MissingPeople.sync().then(() => console.log("missing people table"))
 
