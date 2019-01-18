@@ -1,0 +1,29 @@
+
+@import url('https://fonts.googleapis.com/css?family=Dancing+Script');
+
+body{
+	margin: 0px;
+	padding: 0px;
+}
+
+.App {
+  text-align: center;
+}
+
+.App-header {
+  background-color: #f0f0f0;
+  height: 20px;
+  padding: 30px;
+  color: grey;
+  margin-bottom: 2rem;
+  border-bottom: 1px black solid;
+}
+/*
+span{
+	font-family: 'Dancing Script', cursive;
+}
+*/h1{
+	margin: 0px;
+	font-size: 40px;
+
+}
