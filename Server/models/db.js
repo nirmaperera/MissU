@@ -1,5 +1,5 @@
 const Sequelize = require("sequelize");
-const db = new Sequelize("postgres://postgres:Octb5@iie@localhost/uni");
-// const Dog = require("./dogs");
+const db = new Sequelize("postgres://postgres:admin123@localhost/postgres");
+
 
 module.exports = db
