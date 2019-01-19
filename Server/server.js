@@ -10,7 +10,7 @@ app.use(bodyParse.json());
 app.use(bodyParse.urlencoded());
 
 app.use("/api", require("./api"));
-
+// {force: true} will drop the table if it already exists
 MissingPeople.sync().then(() => console.log("missing people table"))
 
 
