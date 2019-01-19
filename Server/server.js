@@ -15,5 +15,5 @@ MissingPeople.sync().then(() => console.log("missing people table"))
 
 
 app.listen(port, () => {
-    console.log(`App is listening on ${port}`);
+    console.log(`App is listening on port ${port}`);
 });
