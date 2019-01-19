@@ -7,7 +7,7 @@ class About extends Component{
 			<section className="Abt-us"> 
                 <div class="Abt-container" >
                   <div class="row align-right">
-
+                      
                   </div>
 
                </div>

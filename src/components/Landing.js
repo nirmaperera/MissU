@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {NavLink} from "react-router-dom";
 import "../styles/App.css";
 
 
@@ -6,18 +7,24 @@ import "../styles/App.css";
 class Landing extends Component{
 	render(){
 		return(
+		  <div className="App">
+               <header className="App-header">
+                   <h1> Miss<span>U</span> </h1>
+               </header>
 			<div className="landing">
-			    <div className="quote">
-				     <p> Quote </p>
+			    <div className="quote-container">
+				     <p className="quotes"> "Approximately 2,300 Americans are reported missing every day. This includes both children and adults..." </p>
+				     <p>-Carole Moore </p>
 				 </div>
 				     
 				 <div className="btns">
 				 	 <hr/>
-				     <button> View Missing People</button>
-				     <button> Search Missing People</button>
+				     <button> <NavLink to ="/view"> View Missing People</NavLink></button>
+				     <button><NavLink to ="/search">Search Missing People </NavLink></button>
 			     </div>
         		
         	</div>
+        </div>
 
 		);
 	}
