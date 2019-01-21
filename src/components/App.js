@@ -1,25 +1,39 @@
 import React, { Component } from 'react';
-import {BrowserRouter, browserHistory, Route, Switch} from "react-router-dom";
+
+import {BrowserRouter,browserHistory, Route, Switch} from "react-router-dom";
 import Landing from "./Landing";
-import "../styles/App.css";
+import About from "./About";
+import View from "./View";
+import Search from "./Search";
+import Errors from "./Errors";
 import MissingForm from "./MissingForm";
 import Cards from "./MissingCards";
 
+
+import "../styles/App.css";
+
 class App extends Component {
-	render() {
-		return (
-			<BrowserRouter>
+  render() {
+    return (
+      <BrowserRouter>
+         
+            
+            <Switch>
+              <Route path="/" component={Landing} exact/>
+              <Route path="/view" component={View} />
+              <Route path="/search" component={Search} />
+              <Route component={Errors} />
+              <Route path ="/missingForm" component={MissingForm}/>
+            </Switch>
+       
+      </BrowserRouter>
+    );
+  }
 
-
-				<Switch>
-					<Route path="/" component={Landing} exact/>
-					<Route path ="/missingForm" component={MissingForm}/>
-					{/*<Route path = "/cards" component = {Cards}/>*/}
-				</Switch>
-
-			</BrowserRouter>
-		);
-	}
 }
+
+
+
+
 
 export default App;

@@ -4,18 +4,30 @@
   "description": "A app for missing people in the United States.",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server --mode development --open --hot",
-    "build": "./node_modules/.bin/webpack --mode production"
+    "build": "./node_modules/.bin/webpack --mode production",
+    "start": "node ./Server/server.js"
+  },
+  "engines": {
+    "node": "10.15.0"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "@babel/core": "^7.2.2",
     "bootstrap": "^3.3.7",
+    "express": "^4.16.4",
+    "pg": "^7.8.0",
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
+
+
     "react-router-dom": "^4.3.1",
+
+    "sequelize": "^4.42.0",
+    "sequelize-cli": "^5.4.0"
     "axios": "latest"
+
+
   },
   "devDependencies": {
     "babel-core": "^6.26.3",

@@ -4,24 +4,16 @@ const path = require("path")
 const bodyParse = require("body-parser")
 const { MissingPeople } = require("./models")
 //const { Student } = require("./models")
-
-
-// const dbusername = 'postgres';
-// const dbpassword = 'admin123';
-// const dbport = '5432';
-// const databaseName = 'postgres';
-// const postgresUrl= `postgres://${dbusername}:${dbpassword}@localhost:${dbport}/${databaseName}`;
-// const Sequelize = require('sequelize');
-// const sequelize = new Sequelize(postgresUrl)
+const port = process.env.PORT || 3000;
 
 app.use(bodyParse.json());
 app.use(bodyParse.urlencoded());
 
 app.use("/api", require("./api"));
-
+// {force: true} will drop the table if it already exists
 MissingPeople.sync().then(() => console.log("missing people table"))
 
 
-app.listen(3000, () => {
-    console.log("App is listening on port 3000");
+app.listen(port, () => {
+    console.log(`App is listening on port ${port}`);
 });
