@@ -1,20 +1,23 @@
 import React, { Component } from 'react';
+import {BrowserRouter, browserHistory, Route, Switch} from "react-router-dom";
 import Landing from "./Landing";
-import About from "./About";
 import "../styles/App.css";
+import MissingForm from "./MissingForm";
+import Cards from "./MissingCards";
 
-class App extends Component{
-	render(){
-		return(
-			<div className="App">
-        		<header className="App-header">
-            		<h1> MissU </h1>
-        		</header>
+class App extends Component {
+	render() {
+		return (
+			<BrowserRouter>
 
-        		<Landing/>
-        		<About/>
-        	</div>
 
+				<Switch>
+					<Route path="/" component={Landing} exact/>
+					<Route path ="/missingForm" component={MissingForm}/>
+					{/*<Route path = "/cards" component = {Cards}/>*/}
+				</Switch>
+
+			</BrowserRouter>
 		);
 	}
 }

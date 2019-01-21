@@ -5,8 +5,8 @@ class About extends Component{
 	render(){
 		return(
 			<section className="Abt-us"> 
-                <div class="Abt-container" >
-                  <div class="row align-right">
+                <div className="Abt-container" >
+                  <div className="row align-right">
 
                   </div>
 

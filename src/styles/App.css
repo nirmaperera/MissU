@@ -12,7 +12,7 @@ body{
 
 .landing{
 
-  background-image:url("../images/missing.jpg");
+  /*background-image:url("../images/missing.jpg");*/
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;

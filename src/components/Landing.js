@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import "../styles/App.css";
+import {NavLink} from "react-router-dom";
 
 
 
@@ -13,8 +14,8 @@ class Landing extends Component{
 				     
 				 <div className="btns">
 				 	 <hr/>
-				     <button> View Missing People</button>
-				     <button> Search Missing People</button>
+					 <button>  View Missing People</button>
+				     <button> <NavLink to = "/missingForm"> Search Missing People</NavLink></button>
 			     </div>
         		
         	</div>
