@@ -30,10 +30,15 @@ module.exports = {
       }
     ]
   },
+
+  devtool: "source-map",
+  
+
   plugins: [htmlWebpackPlugin],
 
   devServer: {
     historyApiFallback: true,
   }
+
 
 };
