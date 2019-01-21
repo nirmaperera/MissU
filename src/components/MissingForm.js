@@ -4,7 +4,7 @@ import Cards from "./MissingCards";
 import {NavLink} from "react-router-dom";
 import axios from 'axios';
 
-const API_KEY = "710ddfbf1a4611dfe147f8cb6416999f0a9008a6bf1a6b947d346f70";
+
 
 class MissingForm extends Component{
     constructor(props){
@@ -20,6 +20,7 @@ class MissingForm extends Component{
             lastname: "",
             computedmissingmaxage: "",
             dateoflastcontact: "",
+
 
 
 
@@ -42,20 +43,21 @@ class MissingForm extends Component{
         this.setState({gender:e.target.value});
     }
     handleChangeFName(e){
-        this.setState({gender:e.target.value});
+        this.setState({firstname:e.target.value});
     }
     handleChangeMName(e){
-        this.setState({gender:e.target.value});
+        this.setState({middlename:e.target.value});
     }
     handleChangeLName(e){
-        this.setState({gender:e.target.value});
+        this.setState({lastname:e.target.value});
     }
     handleChangeAge(e){
-        this.setState({gender:e.target.value});
+        this.setState({computedmissingmaxage:e.target.value});
     }
     handleChangeDate(e){
-        this.setState({gender:e.target.value});
+        this.setState({dateoflastcontact:e.target.value});
     }
+
 
     apiCall() {
         let url = "https://public.opendatasoft.com/api/records/1.0/search/?dataset=namus-missings&sort=modifieddatetime&facet=cityoflastcontact&facet=countydisplaynameoflastcontact&facet=raceethnicity&facet=statedisplaynameoflastcontact&facet=gender&facet=firstname&facet=middlename&facet=lastname&facet=computedmissingmaxage&facet=dateoflastcontact"
@@ -82,9 +84,6 @@ class MissingForm extends Component{
         }
         if(this.state.dateoflastcontact !== ""){
             url = url + "&refine.dateoflastcontact=" + this.state.dateoflastcontact;
-        }
-        if(this.state.raceethnicity !== ""){
-            url = url + "&refine.raceethnicity=" + this.state.raceethnicity;
         }
         if(this.state.raceethnicity !== ""){
             const race = this.state.raceethnicity.split(" ").join("+");
