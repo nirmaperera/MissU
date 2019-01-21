@@ -1,10 +1,13 @@
 import React, { Component } from 'react';
+
 import {BrowserRouter,browserHistory, Route, Switch} from "react-router-dom";
 import Landing from "./Landing";
 import About from "./About";
 import View from "./View";
 import Search from "./Search";
 import Errors from "./Errors";
+import MissingForm from "./MissingForm";
+import Cards from "./MissingCards";
 
 
 import "../styles/App.css";
@@ -20,11 +23,13 @@ class App extends Component {
               <Route path="/view" component={View} />
               <Route path="/search" component={Search} />
               <Route component={Errors} />
+              <Route path ="/missingForm" component={MissingForm}/>
             </Switch>
        
       </BrowserRouter>
     );
   }
+
 }
 
 
