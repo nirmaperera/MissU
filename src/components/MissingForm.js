@@ -1,10 +1,7 @@
 import React, { Component } from 'react';
 import "../styles/App.css";
 import Cards from "./MissingCards";
-import {NavLink} from "react-router-dom";
 import axios from 'axios';
-
-const API_KEY = "710ddfbf1a4611dfe147f8cb6416999f0a9008a6bf1a6b947d346f70";
 
 class MissingForm extends Component{
     constructor(props){
@@ -20,7 +17,7 @@ class MissingForm extends Component{
             lastname: "",
             computedmissingmaxage: "",
             dateoflastcontact: "",
-
+            namus2number: "",
 
 
             data:[]
@@ -42,19 +39,19 @@ class MissingForm extends Component{
         this.setState({gender:e.target.value});
     }
     handleChangeFName(e){
-        this.setState({gender:e.target.value});
+        this.setState({firstname:e.target.value});
     }
     handleChangeMName(e){
-        this.setState({gender:e.target.value});
+        this.setState({middlename:e.target.value});
     }
     handleChangeLName(e){
-        this.setState({gender:e.target.value});
+        this.setState({lastname:e.target.value});
     }
     handleChangeAge(e){
-        this.setState({gender:e.target.value});
+        this.setState({computedmissingmaxage:e.target.value});
     }
     handleChangeDate(e){
-        this.setState({gender:e.target.value});
+        this.setState({dateoflastcontact:e.target.value});
     }
 
     apiCall() {
@@ -115,6 +112,7 @@ class MissingForm extends Component{
         return(
           <form>
             <div>
+                <div className="form">
                 <div>
                     <label htmlFor="firstName" >First Name:</label>
                     <input type="text" placeholder="Corceil" onChange={this.handleChangeFName.bind(this)}/>
@@ -162,10 +160,12 @@ class MissingForm extends Component{
                 </div>
 
                 <button type="button" className="button" onClick={this.handleSearch.bind(this)}>Search</button>
-
+              </div>
+              <div className="grids">
               <Cards
                   missingData = {this.state.data}
               />
+              </div>
             </div>
           </form>
         );
