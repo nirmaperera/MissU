@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import "../styles/App.css";
 import Cards from "./MissingCards";
 import axios from 'axios';
+import {searchThunk} from "../actions";
 
 class MissingForm extends Component{
     constructor(props){
@@ -17,10 +18,7 @@ class MissingForm extends Component{
             lastname: "",
             computedmissingmaxage: "",
             dateoflastcontact: "",
-            namus2number: "",
-
-
-            data:[]
+            namus2number: ""
         };
     }
     handleChangeCity(e) {
@@ -54,60 +52,14 @@ class MissingForm extends Component{
         this.setState({dateoflastcontact:e.target.value});
     }
 
-    apiCall() {
-        let url = "https://public.opendatasoft.com/api/records/1.0/search/?dataset=namus-missings&sort=modifieddatetime&facet=cityoflastcontact&facet=countydisplaynameoflastcontact&facet=raceethnicity&facet=statedisplaynameoflastcontact&facet=gender&facet=firstname&facet=middlename&facet=lastname&facet=computedmissingmaxage&facet=dateoflastcontact"
-        if(this.state.cityoflastcontact && this.state.cityoflastcontact !== ""){
-            url = url +"&refine.cityoflastcontact="+this.state.cityoflastcontact;
-        }
-        if(this.state.countydisplaynameoflastcontact !== ""){
-            url = url + "&refine.countydisplaynameoflastcontact=" + this.state.countydisplaynameoflastcontact;
-        }
-        if(this.state.statedisplaynameoflastcontact !== ""){
-            url = url + "&refine.statedisplaynameoflastcontact=" + this.state.statedisplaynameoflastcontact;
-        }
-        if(this.state.gender !== ""){
-            url = url + "&refine.gender=" + this.state.gender;
-        }
-        if(this.state.firstname !== ""){
-            url = url + "&refine.firstname=" + this.state.firstname;
-        }
-        if(this.state.middlename !== ""){
-            url = url + "&refine.middlename=" + this.state.middlename;
-        }
-        if(this.state.lastname !== ""){
-            url = url + "&refine.lastname=" + this.state.lastname;
-        }
-        if(this.state.dateoflastcontact !== ""){
-            url = url + "&refine.dateoflastcontact=" + this.state.dateoflastcontact;
-        }
-        if(this.state.raceethnicity !== ""){
-            url = url + "&refine.raceethnicity=" + this.state.raceethnicity;
-        }
-        if(this.state.raceethnicity !== ""){
-            const race = this.state.raceethnicity.split(" ").join("+");
-            url = url + "&refine.raceethnicity=" + race;
-        }
-        if(this.state.computedmissingmaxage !== ""){
-            url = url + "&refine.computedmissingmaxage=" + this.state.computedmissingmaxage;
-        }
-
-        return url;
-    }
     handleSearch(e){
         e.preventDefault();
 
-        let url = this.apiCall.call(this);
-        axios.get(url)
-            .then(response => {
-                this.setState({data: response.data.records});
-
-                console.log(response.data.records);
-            })
-            .catch(err => {
-                this.setState({data: []})
-                console.log(err)
-            })
+        this.props.searchThunk(this.state)
+        console.log(this.state)
     }
+
+
     render(){
         return(
           <form>
@@ -161,11 +113,7 @@ class MissingForm extends Component{
 
                 <button type="button" className="button" onClick={this.handleSearch.bind(this)}>Search</button>
               </div>
-              <div className="grids">
-              <Cards
-                  missingData = {this.state.data}
-              />
-              </div>
+
             </div>
           </form>
         );

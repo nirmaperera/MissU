@@ -15,20 +15,20 @@
   "license": "ISC",
   "dependencies": {
     "@babel/core": "^7.2.2",
+    "axios": "latest",
     "bootstrap": "^3.3.7",
     "express": "^4.16.4",
+    "middleware": "^1.0.0",
     "pg": "^7.8.0",
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
-
-
+    "react-redux": "^6.0.0",
     "react-router-dom": "^4.3.1",
-
+    "redux": "^4.0.1",
+    "redux-thunk": "^2.3.0",
     "sequelize": "^4.42.0",
     "sequelize-cli": "^5.4.0",
-    "axios": "latest"
-
-
+    "thunk": "0.0.1"
   },
   "devDependencies": {
     "babel-core": "^6.26.3",
