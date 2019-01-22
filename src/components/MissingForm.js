@@ -2,8 +2,10 @@ import React, { Component } from 'react';
 import "../styles/App.css";
 import Cards from "./MissingCards";
 import axios from 'axios';
+
 import {searchThunk} from "../actions";
 import CardsConnect from "./CardsConnect";
+
 
 class MissingForm extends Component{
     constructor(props){
@@ -19,7 +21,9 @@ class MissingForm extends Component{
             lastname: "",
             computedmissingmaxage: "",
             dateoflastcontact: "",
+
             namus2number: ""
+
         };
     }
     handleChangeCity(e) {
@@ -52,6 +56,7 @@ class MissingForm extends Component{
     handleChangeDate(e){
         this.setState({dateoflastcontact:e.target.value});
     }
+
 
     handleSearch(e){
         e.preventDefault();
