@@ -31,14 +31,14 @@ app.use("/api", require("./api"));
 MissingPeople.sync().then(() => console.log("missing people table"));
 User.sync().then(() => console.log("User table"));
 
-if(process.env.NODE_ENV === 'production'){
-  // Express will serve up production assets
-  app.use(express.static('../dist'));
-  app.get('*' (req, res)=>{
-    res.sendFile(path.resolve(__dirname, 'dist', 'index.html'));
-  })
-  // Express will serve up the index.html file if ..
-}
+// if(process.env.NODE_ENV === 'production'){
+//   // Express will serve up production assets
+//   app.use(express.static('../dist'));
+//   app.get('*' (req, res)=>{
+//     res.sendFile(path.resolve(__dirname, 'dist', 'index.html'));
+//   })
+//   // Express will serve up the index.html file if ..
+// }
 
 app.listen(port, () => {
     console.log(`App is listening on port ${port}`);
