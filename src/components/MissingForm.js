@@ -3,6 +3,7 @@ import "../styles/App.css";
 import Cards from "./MissingCards";
 import axios from 'axios';
 import {searchThunk} from "../actions";
+import CardsConnect from "./CardsConnect";
 
 class MissingForm extends Component{
     constructor(props){
@@ -62,6 +63,7 @@ class MissingForm extends Component{
 
     render(){
         return(
+            <div>
           <form>
             <div>
                 <div className="form">
@@ -116,6 +118,8 @@ class MissingForm extends Component{
 
             </div>
           </form>
+            <CardsConnect/>
+          </div>
         );
     }
 }

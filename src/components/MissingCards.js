@@ -2,7 +2,7 @@ import React, {Component } from 'react';
 import '../styles/App.css';
 import "../styles/MissingCards.css";
 import {NavLink} from "react-router-dom";
-import CardsConnect from "./FormConnect"
+
 
 export class MissingCards extends Component{
     render(){
@@ -44,7 +44,7 @@ class Cards extends Component{
 
 
 
-                                 return <CardsConnect  fN ={i.fields.firstname} mN = {i.fields.middlename} lN = {i.fields.lastname}
+                                 return <MissingCards  fN ={i.fields.firstname} mN = {i.fields.middlename} lN = {i.fields.lastname}
                                                age = {i.fields.computedmissingmaxage} dt = {i.fields.dateoflastcontact}
                                                lCity = {i.fields.cityoflastcontact} count = {i.fields.countydisplaynameoflastcontact}
                                                raceE = {i.fields.raceethnicity} lState = {i.fields.statedisplaynameoflastcontact}

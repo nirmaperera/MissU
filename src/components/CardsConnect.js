@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import {MissingCards} from './MissingCards';
 import { search } from "../actions";
+import Cards from "./MissingCards";
 
 
 const mapStateToProps = (state) => {
@@ -12,6 +13,6 @@ const mapStateToProps = (state) => {
 const CardsConnect = connect(
     mapStateToProps,
     null
-)(MissingCards);
+)(Cards);
 
 export default CardsConnect;
