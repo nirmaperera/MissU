@@ -18,7 +18,6 @@ app.use(
 app.use(passport.initialize());
 app.use(passport.session());
 
-
 // below two lines can be refactor to be third line
 // const authRoutes = require('./routes/authRoutes');
 // authRoutes(app);
