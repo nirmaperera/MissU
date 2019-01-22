@@ -21,7 +21,7 @@ export class MissingCards extends Component{
                 <p>Gender: {this.props.gen}</p>
                 <p>Case Number: {this.props.namusId}</p>
 
-                <button type="button"><NavLink to = "/case">See Full Info</NavLink></button>
+                <button type="button"><NavLink to = "/case">Add Tip</NavLink></button>
 
 
             </div>
