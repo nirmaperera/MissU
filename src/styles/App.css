@@ -12,7 +12,7 @@ body{
 
 .landing{
 
-  /*background-image:url("../images/missing.jpg");*/
+  background-image:url("../images/missing.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -56,6 +56,7 @@ hr{
   background-color: #e62e00;
   color: #fff;
   font-weight: 100;
+  border:1px white solid;
 }
 
 .quote-container{
@@ -86,13 +87,13 @@ a{
 }
 
 .App-header {
-  background-image: linear-gradient(to bottom, #b0b0b0, #c2c2c3, #d4d5d7, #e6e8eb, #f8fbff);
+  background-image: #f0f0f0;
   height: 20px;
   padding: 30px;
   margin: 0px;
   color: grey;
-  
-  border-bottom: 1px black solid;
+ 
+  border-bottom: 2px #e62e00 solid;
 }
 /*
 span{
@@ -104,3 +105,5 @@ span{
   color:black;
 
 }
+
+

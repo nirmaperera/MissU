@@ -15,7 +15,7 @@
   "license": "ISC",
   "dependencies": {
     "@babel/core": "^7.2.2",
-    "axios": "latest",
+    "axios": "^0.18.0",
     "bootstrap": "^3.3.7",
     "express": "^4.16.4",
     "middleware": "^1.0.0",
