@@ -19,7 +19,7 @@ module.exports = app => {
     res.send(req.user);
   });
 
-  app.get('/', (req, res) => {
-    res.redirect('http://localhost:8080/');
-  });
+  // app.get('/', (req, res) => {
+  //   res.redirect('http://localhost:8080/');
+  // });
 };
