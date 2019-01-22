@@ -4,7 +4,9 @@ import {BrowserRouter,browserHistory, Route, Switch} from "react-router-dom";
 import Landing from "./Landing";
 import About from "./About";
 import View from "./View";
-import MissingForm from "./MissingForm";
+import MissingForm from "./FormConnect";
+import MissingCards from "./CardsConnect"
+import Case from "./Case"
 import Errors from "./Errors";
 
 
@@ -20,6 +22,7 @@ class App extends Component {
               <Route path="/" component={Landing} exact/>
               <Route path="/view" component={View} />
               <Route path ="/missingForm" component={MissingForm}/>
+              <Route path = "/case" component={Case}/>
               <Route component={Errors} />
 
             </Switch>

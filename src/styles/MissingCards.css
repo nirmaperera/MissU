@@ -1,0 +1,24 @@
+
+/*.cards{*/
+    /*font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode' sans-serif;*/
+    /*border: 3px solid black;*/
+    /*padding: 10px;*/
+    /*margin-bottom: 10px;*/
+    /*background-color: #f0f0f0;*/
+/*}*/
+
+.cards {
+    margin-top:10px;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-gap: 10px;
+    padding: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.8);
+
+}
+
+.form {
+    margin-top: 10px;
+    text-align: center;
+
+}
