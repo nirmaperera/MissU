@@ -1,13 +1,13 @@
 const express = require("express");
 const path = require("path");
 const bodyParse = require("body-parser");
-const { MissingPeople } = require("./Server/models");
-const { User } = require("./Server/models");
+const { MissingPeople } = require("./server/models");
+const { User } = require("./server/models");
 const port = process.env.PORT || 3000;
 const cookieSession = require('cookie-session');
 const passport = require('passport');
-const keys = require('./Server/config/keys');
-require('./Server/services/passport');
+const keys = require('./server/config/keys');
+require('./server/services/passport');
 const app = express();
 app.use(
   cookieSession({
@@ -21,12 +21,12 @@ app.use(passport.session());
 // below two lines can be refactor to be third line
 // const authRoutes = require('./routes/authRoutes');
 // authRoutes(app);
-require('./Server/routes/authRoutes')(app);
+require('./server/routes/authRoutes')(app);
 
 app.use(bodyParse.json());
 app.use(bodyParse.urlencoded());
 
-app.use("/api", require("./Server/api"));
+app.use("/api", require("./server/api"));
 // {force: true} will drop the table if it already exists
 MissingPeople.sync().then(() => console.log("missing people table"));
 User.sync().then(() => console.log("User table"));
