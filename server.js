@@ -39,7 +39,7 @@ User.sync().then(() => console.log("User table"));
 //   })
 //   // Express will serve up the index.html file if ..
 // }
-if(process.env.NODE_ENV === 'production'){
+
 app.use(express.static(__dirname + '/dist'));
 
 app.get('*', (req, res) => {
