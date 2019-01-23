@@ -1,5 +1,6 @@
 import axios from "axios";
 export const SEARCH = "SEARCH";
+export const ADD ="ADD";
 
 
 function apiCall(searchParams) {
@@ -54,6 +55,10 @@ function apiCall(searchParams) {
 //             console.log(err)
 //         })
 // }
+function apiForAdd(tip){
+        let urltopost = "/api/missingpeoples/add"
+    return urltopost;
+}
 
 export const search = (searchParams) =>{
     return{
@@ -68,4 +73,18 @@ return axios.get(apiCall(searchParams))
         dispatch(search(searchResults))
     )
 
+}
+
+export const add = (tip) => {
+    return {
+        type: ADD,
+        value: tip
+    }
+}
+
+export const addThunk = (tip) => (dispatch) = {
+return: axios.post(apiForAdd(tip))
+        .then(tipAdded =>
+            dispatch(add(tipAdded))
+        )
 }

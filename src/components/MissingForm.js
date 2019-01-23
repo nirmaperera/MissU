@@ -5,6 +5,7 @@ import axios from 'axios';
 
 import {searchThunk} from "../actions";
 import CardsConnect from "./CardsConnect";
+import {Link} from "react-router-dom";
 
 
 class MissingForm extends Component{
@@ -123,7 +124,13 @@ class MissingForm extends Component{
 
             </div>
           </form>
-            <CardsConnect/>
+
+
+                    <div className="card-content">
+
+                    <CardsConnect/>
+                    </div>
+
           </div>
         );
     }

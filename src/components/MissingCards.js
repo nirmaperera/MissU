@@ -2,11 +2,12 @@ import React, {Component } from 'react';
 import '../styles/App.css';
 import "../styles/MissingCards.css";
 import {NavLink} from "react-router-dom";
-
+import {Link} from "react-router-dom";
 
 export class MissingCards extends Component{
     render(){
         return (
+
             <div className="cards">
 
                 <p>First Name: {this.props.fN}</p>
@@ -21,10 +22,11 @@ export class MissingCards extends Component{
                 <p>Gender: {this.props.gen}</p>
                 <p>Case Number: {this.props.namusId}</p>
 
-                <button type="button"><NavLink to = "/case">Add Tip</NavLink></button>
-
-
+                <Link to={'/case/'+ this.props.namusId}>
+                <button type="button">Add Tip</button>
+                </Link>
             </div>
+
         );
     }
 }
@@ -43,17 +45,18 @@ class Cards extends Component{
                             {
 
 
-
-                                 return <MissingCards  fN ={i.fields.firstname} mN = {i.fields.middlename} lN = {i.fields.lastname}
+                                    return <MissingCards  fN ={i.fields.firstname} mN = {i.fields.middlename} lN = {i.fields.lastname}
                                                age = {i.fields.computedmissingmaxage} dt = {i.fields.dateoflastcontact}
                                                lCity = {i.fields.cityoflastcontact} count = {i.fields.countydisplaynameoflastcontact}
                                                raceE = {i.fields.raceethnicity} lState = {i.fields.statedisplaynameoflastcontact}
                                                gen = {i.fields.gender} namusId = {i.fields.namus2number}/>
+
                             }
                         )
                         :
                         "No Results Found"
                 }
+
                 </p>
             </div>
         );
