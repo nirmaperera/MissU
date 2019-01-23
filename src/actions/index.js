@@ -55,8 +55,8 @@ function apiCall(searchParams) {
 //             console.log(err)
 //         })
 // }
-function apiForAdd(tip){
-        let urltopost = "/api/missingpeoples/add"
+function apiForAdd(params){
+        let urltopost = `/api/missingpeoples/add/${params.caseNumber}/${params.tip}`;
     return urltopost;
 }
 
@@ -75,16 +75,18 @@ return axios.get(apiCall(searchParams))
 
 }
 
-export const add = (tip) => {
+export const add = (params) => {
     return {
         type: ADD,
-        value: tip
+        tip: params
+
     }
 }
 
-export const addThunk = (tip) => (dispatch) = {
-return: axios.post(apiForAdd(tip))
+export const addThunk = (params) => (dispatch) => {
+return axios.post(apiForAdd(params))
         .then(tipAdded =>
             dispatch(add(tipAdded))
+
         )
 }
