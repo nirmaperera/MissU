@@ -1,6 +1,4 @@
 import { connect } from 'react-redux';
-import {MissingCards} from './MissingCards';
-import { search } from "../actions";
 import Cards from "./MissingCards";
 
 
