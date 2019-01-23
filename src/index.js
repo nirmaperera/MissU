@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./styles/App.css";
-//import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import App from "./components/App";
 import {applyMiddleware, createStore} from 'redux';
 import { Provider } from 'react-redux';
