@@ -24,7 +24,7 @@ class App extends Component {
               <Route path="/" component={Landing} exact/>
               <Route path="/view" component={View} />
               <Route path ="/missingForm" component={MissingForm}/>
-              <Route path = "/case" component={Case}/>
+              <Route path = "/case/:case_id" component={Case}/>
               <Route path="/Login" component={Login} />
                <Route path="/Signup" component={Signup} />
               <Route component={Errors} />

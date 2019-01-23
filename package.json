@@ -17,10 +17,13 @@
   "dependencies": {
     "@babel/core": "^7.2.2",
     "axios": "^0.18.0",
-    "bootstrap": "^3.3.7",
+    "bootstrap": "^3.4.0",
     "cookie-session": "^2.0.0-beta.3",
     "express": "^4.16.4",
     "middleware": "^1.0.0",
+    "nodemon": "^1.18.9",
+    "passport": "^0.4.0",
+    "passport-google-oauth20": "^1.0.0",
     "pg": "^7.8.0",
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
@@ -31,9 +34,7 @@
     "sequelize": "^4.42.0",
     "sequelize-cli": "^5.4.0",
     "thunk": "0.0.1",
-    "nodemon": "^1.18.9",
-    "passport": "^0.4.0",
-    "passport-google-oauth20": "^1.0.0"
+    "url-loader": "^1.1.2"
   },
   "devDependencies": {
     "babel-core": "^6.26.3",
