@@ -56,7 +56,7 @@ function apiCall(searchParams) {
 //         })
 // }
 function apiForAdd(params){
-        let urltopost = `/api/missingpeoples/add/${params.caseNumber}/${params.tip}`;
+        let urltopost = `/api/missingpeoples/add`;
     return urltopost;
 }
 
@@ -84,7 +84,7 @@ export const add = (params) => {
 }
 
 export const addThunk = (params) => (dispatch) => {
-return axios.post(apiForAdd(params))
+return axios.post(apiForAdd(params), params)
         .then(tipAdded =>
             dispatch(add(tipAdded))
 

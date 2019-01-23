@@ -12,25 +12,32 @@ router.get('/', async (req,res) => {
 });
 
 /***  Add a missing people's record       ***/
-router.post('/add', async(req,res) => {
-  const { firstName, lastName, caseNumber } = req.body;
-  const newMissingPeople =  await MissingPeople.create({
-                            firstName: firstName,
-                            lastName: lastName,
-                            caseNumber: caseNumber
-                        });
-  res.status(201).send(newMissingPeople);
-});
+// router.post('/add', async(req,res) => {
+//   const { firstName, lastName, caseNumber } = req.body;
+//   const newMissingPeople =  await MissingPeople.create({
+//                             firstName: firstName,
+//                             lastName: lastName,
+//                             caseNumber: caseNumber
+//                         });
+//   res.status(201).send(newMissingPeople);
+// });
 
 /***  Add a tip for a missing people record       ***/
-router.post('/addtip', async(req,res) => {
+router.post('/add', async(req,res) => {
   const { firstName, lastName, caseNumber, tipGiverId, tip } = req.body;
+  console.log(req.body);
   const newTip =  await Tip.create({
                             caseNumber: caseNumber,
                             tipGiverId: tipGiverId,
                             tip: tip
                         });
   res.status(201).send(newTip);
+});
+
+router.get('/tips', async (req,res) => {
+    const allTips = await Tip.findAll();
+    console.log(allTips);
+    res.send(allTips);
 });
 
 /***  Add a tip for a missing people record       ***/
