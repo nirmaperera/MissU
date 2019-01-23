@@ -23,29 +23,16 @@ passport.use(
       callbackURL: '/auth/google/callback',
       proxy: true
     },
-    (accessToken, refreshToken, profile, done) => {
-      // console.log('accessToken', accessToken);
-      // console.log('refreshToken', refreshToken);
-      // console.log('profile:', profile);
-      User.findOne({
-          where: {
-            googleId: profile.id
-          }
-        })
-        .then( (existingUser) => {
-
-            if(existingUser){
-              console.log('find existing user', existingUser);
-              done(null, existingUser);
-            } else{
-              User.create({
-                  name: profile.displayName,
-                  googleId: profile.id
-                })
-              .then(user => done(null, user));
-            }
-
-        });
-    }
-  )
+    async (accessToken, refreshToken, profile, done) => {
+      const existingUser = await User.findOne({ where: {googleId: profile.id } });
+      if(existingUser){
+        console.log('find existing user', existingUser);
+        done(null, existingUser);
+      }
+      else{
+        const user = await User.create({name: profile.displayName,  googleId: profile.id  });
+        done(null, user);
+      }//else ends
+    }// async ends
+  )// new GoogleStrategy ends
 );
