@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import "../styles/App.css";
 import Cards from "./MissingCards";
-import {NavLink} from "react-router-dom";
 import axios from 'axios';
 
-const API_KEY = "710ddfbf1a4611dfe147f8cb6416999f0a9008a6bf1a6b947d346f70";
+import {searchThunk} from "../actions";
+import CardsConnect from "./CardsConnect";
+
 
 class MissingForm extends Component{
     constructor(props){
@@ -21,9 +22,8 @@ class MissingForm extends Component{
             computedmissingmaxage: "",
             dateoflastcontact: "",
 
+            namus2number: ""
 
-
-            data:[]
         };
     }
     handleChangeCity(e) {
@@ -42,79 +42,36 @@ class MissingForm extends Component{
         this.setState({gender:e.target.value});
     }
     handleChangeFName(e){
-        this.setState({gender:e.target.value});
+        this.setState({firstname:e.target.value});
     }
     handleChangeMName(e){
-        this.setState({gender:e.target.value});
+        this.setState({middlename:e.target.value});
     }
     handleChangeLName(e){
-        this.setState({gender:e.target.value});
+        this.setState({lastname:e.target.value});
     }
     handleChangeAge(e){
-        this.setState({gender:e.target.value});
+        this.setState({computedmissingmaxage:e.target.value});
     }
     handleChangeDate(e){
-        this.setState({gender:e.target.value});
+        this.setState({dateoflastcontact:e.target.value});
     }
 
-    apiCall() {
-        let url = "https://public.opendatasoft.com/api/records/1.0/search/?dataset=namus-missings&sort=modifieddatetime&facet=cityoflastcontact&facet=countydisplaynameoflastcontact&facet=raceethnicity&facet=statedisplaynameoflastcontact&facet=gender&facet=firstname&facet=middlename&facet=lastname&facet=computedmissingmaxage&facet=dateoflastcontact"
-        if(this.state.cityoflastcontact && this.state.cityoflastcontact !== ""){
-            url = url +"&refine.cityoflastcontact="+this.state.cityoflastcontact;
-        }
-        if(this.state.countydisplaynameoflastcontact !== ""){
-            url = url + "&refine.countydisplaynameoflastcontact=" + this.state.countydisplaynameoflastcontact;
-        }
-        if(this.state.statedisplaynameoflastcontact !== ""){
-            url = url + "&refine.statedisplaynameoflastcontact=" + this.state.statedisplaynameoflastcontact;
-        }
-        if(this.state.gender !== ""){
-            url = url + "&refine.gender=" + this.state.gender;
-        }
-        if(this.state.firstname !== ""){
-            url = url + "&refine.firstname=" + this.state.firstname;
-        }
-        if(this.state.middlename !== ""){
-            url = url + "&refine.middlename=" + this.state.middlename;
-        }
-        if(this.state.lastname !== ""){
-            url = url + "&refine.lastname=" + this.state.lastname;
-        }
-        if(this.state.dateoflastcontact !== ""){
-            url = url + "&refine.dateoflastcontact=" + this.state.dateoflastcontact;
-        }
-        if(this.state.raceethnicity !== ""){
-            url = url + "&refine.raceethnicity=" + this.state.raceethnicity;
-        }
-        if(this.state.raceethnicity !== ""){
-            const race = this.state.raceethnicity.split(" ").join("+");
-            url = url + "&refine.raceethnicity=" + race;
-        }
-        if(this.state.computedmissingmaxage !== ""){
-            url = url + "&refine.computedmissingmaxage=" + this.state.computedmissingmaxage;
-        }
 
-        return url;
-    }
     handleSearch(e){
         e.preventDefault();
 
-        let url = this.apiCall.call(this);
-        axios.get(url)
-            .then(response => {
-                this.setState({data: response.data.records});
-
-                console.log(response.data.records);
-            })
-            .catch(err => {
-                this.setState({data: []})
-                console.log(err)
-            })
+        this.props.searchThunk(this.state)
+        console.log(this.state)
     }
+
+
     render(){
         return(
+            <div>
           <form>
             <div>
+                <div className="form">
                 <div>
                     <label htmlFor="firstName" >First Name:</label>
                     <input type="text" placeholder="Corceil" onChange={this.handleChangeFName.bind(this)}/>
@@ -162,12 +119,12 @@ class MissingForm extends Component{
                 </div>
 
                 <button type="button" className="button" onClick={this.handleSearch.bind(this)}>Search</button>
+              </div>
 
-              <Cards
-                  missingData = {this.state.data}
-              />
             </div>
           </form>
+            <CardsConnect/>
+          </div>
         );
     }
 }
