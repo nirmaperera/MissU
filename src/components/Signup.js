@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import "../styles/Signup.css";
 
 class Signup extends Component {
   constructor(props){
@@ -38,7 +39,12 @@ class Signup extends Component {
     }
   render() {
     return (
-     <div className="form">
+     <div >
+
+       <h1 className="SignUpTitle"> Sign Up</h1>
+
+        <div className="wrapper_sign">
+
       <form onSubmit={this.handleSubmit} >
       <div className="form-group">
         <label>
@@ -74,6 +80,7 @@ class Signup extends Component {
         <input type="submit" value="Submit" />
       </div>
       </form>
+    </div>
     </div>
     );
   }

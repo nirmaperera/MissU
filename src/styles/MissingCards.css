@@ -41,7 +41,7 @@
     /*border-bottom:red 2px solid;*/
 /*}*/
 
-.form{
+/*.form{
     padding: 20px;
     text-align: center;
 }
@@ -76,7 +76,7 @@
     color:white;
     border: 2px solid white;
 }
-
+*/
 /*.container {*/
     /*background: #fff;*/
     /*padding: 2rem;*/
@@ -97,7 +97,7 @@
 
 /*}*/
 
-.container {
+/*.container {
     background: #fff;
     padding: 2rem;
     border-radius: 5px;
@@ -152,3 +152,4 @@ input:-webkit-autofill {
     -webkit-text-fill-color: #2c3e50 !important;
 }
 
+*/
