@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css?family=Major+Mono+Display|Roboto+Mono');
+
+.LoginForm{
+	
+	border: 2px solid black;
+	width: 60%;
+	padding: 20px;
+	margin: 70px auto;
+	background-color: #f0f0f0;
+	border:6px solid #580010;
+}
+
+.wrapper{
+
+  background-image:url("../images/missing1.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  width: 70%;
+  margin: 50px auto;
+  border:4px solid #59724B;
+  padding: 30px;
+
+
+}
+
+
+.form-group{
+	text-align: center;
+    margin: 20px;
+}
+
+.LoginTitle{
+	text-align: center;
+	padding: 10px;
+	font-family: 'Major Mono Display', monospace;
+	font-size: 50px;
+	color:#580010;
+
+}
+label{
+	width: 90%;
+	text-align: center;
+	font-size: 20px;
+	letter-spacing: 3px;
+	color:#62744C;
+	font-family: 'Roboto Mono', monospace;
+}
+
+
+.LoginForm input[type="text"]
+{   
+  border: 0;
+  border-bottom: 1px solid #62744C;
+  outline: 0;
+  background:transparent;
+  width: 50%;
+  
+  font-weight: lighter;
+  letter-spacing: 2px;
+  margin-bottom: 30px;
+  margin-left:  20px;
+  font-size: 15px;
+  padding-left: 10px;
+  text-align: center;
+
+}
+
+
+a{
+	color:#62744C;
+	font-size: 15px;
+	font-family: 'Roboto Mono', monospace;
+}
+
+a:hover{
+  text-decoration: none;
+  color:#62744C;
+}
+
+
+.LoginForm input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 30px #1A3A49 inset;
+    -webkit-text-fill-color: #fff !important;
+}
+
+.LoginForm input[type="submit"] {
+  border: 0;
+  padding: 10px 20px;
+  margin: 0 2px;
+  border-radius: 3px;
+  font-weight: lighter;
+  letter-spacing: 1px;
+  font-size: 18px;
+  cursor: pointer;
+  background-color: #580010;
+  color: #fff;
+  font-weight: 100;
+  
+}
