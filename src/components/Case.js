@@ -7,18 +7,32 @@ class Case extends Component{
     constructor(props){
         super(props);
         this.state = {
-            tip: ""
+            tip: "",
+            caseNumber: props.data.fields.namus2number
         }
+        this.handleAdd = this.handleAdd.bind(this);
     }
     handleChange(e) {
         this.setState({tip: e.target.value});
     }
     handleAdd(e){
         e.preventDefault();
+        // console.log("I'VE BEEN CLICKED");
+        this.props.addThunk(this.state)
+        //console.log(this.props.data.fields.namus2number)
 
-        this.props.addThunk()
+
         console.log(this.state)
+        this.handleReset();
+
     }
+
+    handleReset(e) {
+        this.setState({
+            tip: ""
+        })
+    }
+
     render(){
         const data = this.props.data ? (
             <div className = "data">
@@ -42,9 +56,10 @@ class Case extends Component{
         return (
             <div>
                 <h4>{data}</h4>
-                <textarea placeholder="Add a tip here" onChange={this.handleChange.bind(this)}></textarea>
-                <button className="tip" onSubmit={this.handleAdd.bind(this)}>Submit</button>
-
+                <form id="tip-form" onSubmit={this.handleAdd}>
+                    <textarea form="tip-form" col="19" rows="8" placeholder="Add a tip here" onChange={this.handleChange.bind(this)} value={this.state.tip}></textarea>
+                    <button type="submit" className="tip">Submit</button>
+                </form>
             </div>
         );
 
@@ -65,8 +80,8 @@ const mapStatetoProps = (state,ownProps) => {
 
 const mapsDispatchToProps = (dispatch) => {
     return{
-        addThunk: (tip) => {
-            dispatch(addThunk(tip));
+        addThunk: (params) => {
+            dispatch(addThunk(params));
         },
         onTextEntry: (value) => {
             dispatch({ type: 'nothing', text: value });
