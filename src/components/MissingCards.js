@@ -8,7 +8,8 @@ export class MissingCards extends Component{
     render(){
         return (
 
-            <div className="cards">
+            <div className="container" >
+
 
                 <p>First Name: {this.props.fN}</p>
                 <p>Middle Name: {this.props.mN}</p>
@@ -25,6 +26,7 @@ export class MissingCards extends Component{
                 <Link to={'/case/'+ this.props.namusId}>
                 <button type="button">Add Tip</button>
                 </Link>
+
             </div>
 
         );
@@ -34,7 +36,8 @@ export class MissingCards extends Component{
 class Cards extends Component{
     render(){
         return (
-            <div>
+            <div className= "row row align-items-end" style={{marginBottom: "2rem"}}>
+                <div className="missing__card">
                 <p>
 
                 {
@@ -54,10 +57,11 @@ class Cards extends Component{
                             }
                         )
                         :
-                        "No Results Found"
+                        "Waiting for data"
                 }
 
                 </p>
+            </div>
             </div>
         );
     }

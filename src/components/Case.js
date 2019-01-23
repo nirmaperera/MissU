@@ -43,7 +43,7 @@ class Case extends Component{
             <div>
                 <h4>{data}</h4>
                 <textarea placeholder="Add a tip here" onChange={this.handleChange.bind(this)}></textarea>
-                <button onSubmit={this.handleAdd.bind(this)}>Submit</button>
+                <button className="tip" onSubmit={this.handleAdd.bind(this)}>Submit</button>
 
             </div>
         );
