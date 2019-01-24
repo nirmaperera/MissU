@@ -56,7 +56,7 @@ function apiCall(searchParams) {
 //         })
 // }
 function apiForAdd(params){
-        let urltopost = `/api/missingpeoples/add/${params.caseNumber}/${params.tip}`;
+        let urltopost = `/api/missingpeoples/add/`;
     return urltopost;
 }
 

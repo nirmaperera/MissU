@@ -8,7 +8,9 @@ class Case extends Component{
         super(props);
         this.state = {
             tip: "",
-            caseNumber: props.data.fields.namus2number
+            caseNumber: props.data.fields.namus2number,
+            firstName: props.data.fields.firstname,
+            lastName: props.data.fields.lastname
         }
         this.handleAdd = this.handleAdd.bind(this);
     }
