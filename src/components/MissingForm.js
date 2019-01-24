@@ -63,69 +63,79 @@ class MissingForm extends Component{
         e.preventDefault();
 
         this.props.searchThunk(this.state)
-        console.log(this.state)
+        console.log(this.state.gender)
     }
 
 
     render(){
         return(
-            <div>
-          <form>
-            <div>
-                <div className="form">
-                <div>
-                    <label htmlFor="firstName" >First Name:</label>
-                    <input type="text" placeholder="Corceil" onChange={this.handleChangeFName.bind(this)}/>
+            <div className ="row">
+          <form  className = "col s12">
+            <div className = "row">
+                <div className="input-field col s6">
+
+                    <input id="first_name" type="text" className="validate" onChange={this.handleChangeFName.bind(this)}/>
+                    <label htmlFor="first_name">First Name:</label>
+
                 </div>
-                <div>
-                    <label htmlFor="middlename" >Middle Name:</label>
-                    <input type="text" placeholder="Ricardo" onChange={this.handleChangeMName.bind(this)}/>
+                <div className="input-field col s6">
+                    <input id="middle_name" type="text" className="validate" onChange={this.handleChangeMName.bind(this)}/>
+                    <label htmlFor="middle_name" >Middle Name:</label>
                 </div>
-                <div>
-                    <label htmlFor="lastname"  >Last Name:</label>
-                    <input type="text" placeholder="Howard" onChange={this.handleChangeLName.bind(this)}/>
+                <div className="input-field col s6">
+                    <input id="last_name" type="text" className="validate" onChange={this.handleChangeLName.bind(this)}/>
+                    <label htmlFor="last_name"  >Last Name:</label>
+
                 </div>
-                <div>
-                    <label htmlFor="computedmissingmaxage" >Age:</label>
-                    <input type="text" placeholder="28" onChange={this.handleChangeAge.bind(this)}/>
+                <div className="input-field col s6">
+                    <input id="age" type="text" className="validate"  onChange={this.handleChangeAge.bind(this)}/>
+                    <label htmlFor="age" >Age:</label>
+
                 </div>
-                <div>
+                <div className="input-field col s6">
+                    <input id="dateoflastcontact" type="text" className="validate" onChange={this.handleChangeDate.bind(this)}/>
                     <label htmlFor="dateoflastcontact" >Date of Last Contact:</label>
-                    <input type="text" placeholder="2003-06-01" onChange={this.handleChangeDate.bind(this)}/>
+
                 </div>
 
-                <div>
+                <div className="input-field col s6">
                     <label htmlFor="cityoflastcontact" >City of Last Contact:</label>
-                    <input type="text" placeholder="Detroit" required onChange={this.handleChangeCity.bind(this)}/>
+                    <input type="text"  required onChange={this.handleChangeCity.bind(this)}/>
                 </div>
 
-                <div>
+                <div className="input-field col s6">
                     <label htmlFor="countydisplaynameoflastcontact" >County Display Name of Last Contact:</label>
-                    <input type="text" placeholder="Wayne" onChange={this.handleChangeCounty.bind(this)}/>
+                    <input type="text"  onChange={this.handleChangeCounty.bind(this)}/>
                 </div>
 
-                <div>
+                <div className="input-field col s6">
                     <label htmlFor="raceethnicity">Race/Ethnicity: </label>
-                    <input type="text" placeholder="Black African American" onChange={this.handleChangeRace.bind(this)}/>
+                    <input type="text"  onChange={this.handleChangeRace.bind(this)}/>
                 </div>
 
-                <div>
+                <div className="input-field col s6">
                     <label htmlFor="statedisplaynameoflastcontact" >State Display Name of Last Contact: </label>
-                    <input type="text" placeholder="MI" onChange={this.handleChangeState.bind(this)}/>
+                    <input type="text"  onChange={this.handleChangeState.bind(this)}/>
+                </div>
+
+
+                <div className="input-field col s6">
+                    <select onChange={this.handleChangeGender.bind(this)}>
+                    <option selected>Gender</option>
+                   // <option value="" disabled selected>Choose your option</option>
+                    <option value="1">Male</option>
+                    <option value="2">Female</option>
+                    </select>
+                    <label>Gender</label>
                 </div>
 
                 <div>
-                    <label htmlFor="gender" >Gender: </label>
-                    <input type="text" placeholder="Male" onChange={this.handleChangeGender.bind(this)}/>
+                    <button type="button" className="button" onClick={this.handleSearch.bind(this)}>Search</button>
                 </div>
-
-                <button type="button" className="button" onClick={this.handleSearch.bind(this)}>Search</button>
-              </div>
-
             </div>
+
+
           </form>
-
-
                     <div className="card-content">
 
                     <CardsConnect/>
