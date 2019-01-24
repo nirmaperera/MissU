@@ -1,14 +1,14 @@
 const express = require("express");
 const path = require("path");
 const bodyParse = require("body-parser");
-const { MissingPeople } = require("./server/models");
-const { User } = require("./server/models");
-const { Tip } = require("./server/models");
+const { MissingPeople } = require("./Server/models");
+const { User } = require("./Server/models");
+const { Tip } = require("./Server/models");
 const port = process.env.PORT || 3000;
 const cookieSession = require('cookie-session');
 const passport = require('passport');
-const keys = require('./server/config/keys');
-require('./server/services/passport');
+const keys = require('./Server/config/keys');
+require('./Server/services/passport');
 const app = express();
 app.use(
   cookieSession({
@@ -22,12 +22,12 @@ app.use(passport.session());
 // below two lines can be refactor to be third line
 // const authRoutes = require('./routes/authRoutes');
 // authRoutes(app);
-require('./server/routes/authRoutes')(app);
+require('./Server/routes/authRoutes')(app);
 
 app.use(bodyParse.json());
 app.use(bodyParse.urlencoded());
 
-app.use("/api", require("./server/api"));
+app.use("/api", require("./Server/api"));
 
 // Tip.belongsTo(MissingPeople);
 // MissingPeople.hasMany(Tip);
