@@ -32,7 +32,7 @@ router.post('/add', async(req,res) => {
                             tip: tip
                         });
   console.log(newTip);
-  
+
   res.status(201).send();
 });
 
