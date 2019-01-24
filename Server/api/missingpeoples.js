@@ -31,7 +31,9 @@ router.post('/add', async(req,res) => {
                             tipGiverId: tipGiverId,
                             tip: tip
                         });
-  res.status(201).send(newTip);
+  console.log(newTip);
+  
+  res.status(201).send();
 });
 
 router.get('/tips', async (req,res) => {

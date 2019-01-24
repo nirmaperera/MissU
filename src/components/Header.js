@@ -1,19 +1,36 @@
-import React from 'react';
+import React, {Component} from 'react';
 import {NavLink} from "react-router-dom";
 import "../styles/App.css";
+import { connect } from 'react-redux';
 
-const Header=()=>{
-   return(
-      <div className="Header-wrapper">
-        <h1 className="title"> Miss<span>U</span></h1>
-        <div className="links">
-          <NavLink to ="/Signup" > Sign Up</NavLink>
-          <NavLink to = "/Login" > Login</NavLink>
-        </div>
-     </div>
-
+class Header extends Component{
+  renderContent(){
+    switch(this.props.auth){
+      case null:
+        return;
+      case false:
+        return <li><a href="/auth/google">Login with Google</a></li>
+      default:
+        return <li><a href="/api/logout">Logout</a></li>
+    }
+  }
+  render(){
+    console.log(this.props);
+    return(
+       <nav className="grey">
+         <div className="nav-wrapper">
+           <a href="/" className="left brand-logo">
+             MissU
+           </a>
+           <ul className="right">
+             {this.renderContent()}
+           </ul>
+         </div>
+      </nav>
     );
-
+  }
 }
-
-export default Header;
+function mapStateToProps({auth}){
+  return { auth };
+}
+export default connect(mapStateToProps)(Header);

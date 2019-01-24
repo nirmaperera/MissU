@@ -10,7 +10,7 @@ class Landing extends Component{
 	render(){
 		return(
 		  <div className="App">
-               <Header/>
+               
    				<div className="landing">
 			    	<div className="quote-container">
 				     	<p className="quotes"> "Approximately 2,300 Americans are reported missing every day. This includes both children and adults..." </p>
