@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css?family=Major+Mono+Display|Roboto+Mono');
+
+
+
+.tip-wrapper{
+  background-image:url("../images/tip.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  margin: 200px;
+  padding: 10px;
+  border: 3.5px black solid;
+  margin-top:20px;
+  box-shadow: -1px 2px 34px -13px rgba(0,0,0,0.75);
+}
+
+.data{
+	width: 70%;
+    margin: 50px auto;
+    text-align: left;
+    color: grey;
+    border: 3px grey solid;
+    padding: 15px;
+   
+    background-color: #f0f0f0;
+    
+
+
+
+}
+ textarea{
+	border: none;
+	color:black;
+	font-family: 'Roboto Mono', monospace;
+}
+
+.tip{
+ 
+    margin-left: 250px;
+    padding: 8px 12px;
+}
+
+
+.tip-title{
+	color:black;
+	text-align: center;
+	margin: 40px auto;
+	letter-spacing: 2px;
+}
+
+
+strong{
+	font-size: 20px;
+	letter-spacing: 2px;
+	color:black;
+	font-family: 'Roboto Mono', monospace;
+}

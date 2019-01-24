@@ -11,6 +11,13 @@ router.get('/', async (req,res) => {
     res.send(missingpeoples);
 });
 
+/***   Get all missing people's records      ***/
+router.get('/checkuser', async (req,res) => {
+
+    console.log(req.user);
+    res.status(201).send();
+});
+
 /***  Add a missing people's record       ***/
 // router.post('/add', async(req,res) => {
 //   const { firstName, lastName, caseNumber } = req.body;
@@ -24,21 +31,38 @@ router.get('/', async (req,res) => {
 
 /***  Add a tip for a missing people record       ***/
 router.post('/add', async(req,res) => {
+  if(!req.user){
+
+    // return res.status(401).send({error:'You must login!'});
+    return res.redirect(401);
+  }
   const { firstName, lastName, caseNumber, tipGiverId, tip } = req.body;
   console.log(req.body);
   const newTip =  await Tip.create({
                             caseNumber: caseNumber,
-                            tipGiverId: tipGiverId,
+                            tipGiverId: req.user.dataValues.googleId,
                             tip: tip
                         });
-  console.log(newTip);
+  // console.log(newTip);
 
   res.status(201).send();
 });
 
 router.get('/tips', async (req,res) => {
+    if(!req.user){
+      return res.status(401).send({error:'access denied!'});
+    }
     const allTips = await Tip.findAll();
-    console.log(allTips);
+    // console.log(allTips);
+    res.send(allTips);
+});
+
+router.get('/tips/mine', async (req,res) => {
+    if(!req.user){
+      return res.status(401).send({error:'access denied!'});
+    }
+    const allTips = await Tip.findAll({where:{tipGiverId:req.user.dataValues.googleId}});
+    // console.log(allTips);
     res.send(allTips);
 });
 

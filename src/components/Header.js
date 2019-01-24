@@ -11,7 +11,7 @@ class Header extends Component{
       case false:
         return <li><a href="/auth/google">Login with Google</a></li>
       default:
-        return <li><a href="/api/logout">Logout</a></li>
+        return <ul><li><a href="/profile">Profile</a></li><li><a href="/api/logout">Logout</a></li></ul>
     }
   }
   render(){
@@ -19,8 +19,8 @@ class Header extends Component{
     return(
        <nav className="grey">
          <div className="nav-wrapper">
-           <a href="/" className="left brand-logo">
-             MissU
+           <a href="/" className="center brand-logo">
+             Miss<span>U </span>
            </a>
            <ul className="right">
              {this.renderContent()}
