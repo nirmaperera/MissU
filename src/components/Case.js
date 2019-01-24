@@ -21,11 +21,12 @@ class Case extends Component{
     handleAdd(e){
         e.preventDefault();
         // console.log("I'VE BEEN CLICKED");
-        this.props.addThunk(this.state)
+        this.props.addThunk(this.state);
         //console.log(this.props.data.fields.namus2number)
 
 
-        console.log(this.state)
+        console.log(this.state);
+        console.log(typeof(this.state));
         this.handleReset();
 
     }

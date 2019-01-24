@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import {NavLink} from "react-router-dom";
+import "../styles/Login.css";
 
 class Login extends Component {
 	constructor(props){
@@ -11,10 +13,10 @@ class Login extends Component {
         };
     }
 
-     handleGetEmail(e) {
+  handleGetEmail(e) {
         this.setState({email: e.target.value});
     }
-    handleGetPassword(e) {
+  handleGetPassword(e) {
         this.setState({password: e.target.value});
     }
 
@@ -26,11 +28,15 @@ class Login extends Component {
     }
     render(){
     	return(
-      <form onSubmit={this.handleSubmit} >
+        <div>
+        <h1 className="LoginTitle"> Login</h1>
+        <div className="wrapper">
+      <div>
+      <form onSubmit={this.handleSubmit}  className="LoginForm">
        <div className="form-group">
         <label>
-           email:
-          <input type="text" placeholder="Enter the Email" class="form__input" onChange={this.handleGetEmail.bind(this)} />
+           Email:
+          <input type="text" placeholder="Enter Email" class="form__input" onChange={this.handleGetEmail.bind(this)} />
         </label>
        </div>
        <div className="form-group">
@@ -40,10 +46,19 @@ class Login extends Component {
         </label>
       </div>
        <div className="form-group">
-        <input type="submit" value="Submit" />
+        <input type="submit" value="Gmail Login" className="loginBtn" />
       </div>
 
+       <div class="form-group">
+         <NavLink to ="/Signup" > Have an account already?</NavLink>
+       </div>
+
       </form>
+
+      </div>
+    </div>
+
+    </div>
 
     	);
     }

@@ -2,9 +2,43 @@ const db = require("./db")
 const Sequelize = require("sequelize");
 
 const MissingPeople  = db.define("missingpeople",{
-    name:{
+    caseNumber:{
         type:Sequelize.STRING,
         allowNull: false
+    },
+    firstName:{
+        type:Sequelize.STRING,
+        allowNull: false
+    },
+    lastName:{
+        type:Sequelize.STRING,
+        allowNull: false
+    },
+    middleName:{
+        type:Sequelize.STRING,
+    },
+    age:{
+        type:Sequelize.INTEGER,
+    },
+    dateOfLastContact:{
+        type:Sequelize.STRING,
+        // allowNull: false
+    },
+    cityOfLastContact:{
+        type:Sequelize.STRING,
+        // allowNull: false
+    },
+    countryOfLastContact:{
+        type:Sequelize.STRING,
+        // allowNull: false
+    },
+    race:{
+        type:Sequelize.STRING,
+        // allowNull: false
+    },
+    gender:{
+        type:Sequelize.STRING,
+        // allowNull: false
     },
     imageUrl:{
         type:Sequelize.STRING,
@@ -12,7 +46,7 @@ const MissingPeople  = db.define("missingpeople",{
     },
     address:{
         type:Sequelize.STRING,
-        allowNull: false
+        // allowNull: false
     },
     description:{
         type:Sequelize.TEXT

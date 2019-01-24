@@ -1,7 +1,14 @@
 import axios from "axios";
 export const SEARCH = "SEARCH";
 export const ADD ="ADD";
+import {FETCH_USER} from './types';
 
+export const fetchUser = () => {
+  return function(dispatch) {
+    axios.get('/api/current_user')
+      .then(res => dispatch({ type: FETCH_USER, payload: res.data}));
+  }
+};
 
 function apiCall(searchParams) {
     let url = "https://public.opendatasoft.com/api/records/1.0/search/?dataset=namus-missings&sort=modifieddatetime&facet=cityoflastcontact&facet=countydisplaynameoflastcontact&facet=raceethnicity&facet=statedisplaynameoflastcontact&facet=gender&facet=firstname&facet=middlename&facet=lastname&facet=computedmissingmaxage&facet=dateoflastcontact"
@@ -56,7 +63,9 @@ function apiCall(searchParams) {
 //         })
 // }
 function apiForAdd(params){
-        let urltopost = `/api/missingpeoples/add/`;
+
+        let urltopost = `/api/missingpeoples/add`;
+
     return urltopost;
 }
 
@@ -84,7 +93,7 @@ export const add = (params) => {
 }
 
 export const addThunk = (params) => (dispatch) => {
-return axios.post(apiForAdd(params))
+return axios.post(apiForAdd(params), params)
         .then(tipAdded =>
             dispatch(add(tipAdded))
 

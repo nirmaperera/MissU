@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-
 import {BrowserRouter,browserHistory, Route, Switch} from "react-router-dom";
 import Landing from "./Landing";
 import About from "./About";
@@ -10,29 +9,38 @@ import Login from "./Login";
 import Signup from "./Signup";
 import Case from "./Case"
 import Errors from "./Errors";
-
-
+import Header from "./Header";
+import Profile from "./Profile";
 import "../styles/App.css";
+import { connect } from 'react-redux';
+import * as actions from '../actions'
 
 class App extends Component {
+  componentDidMount(){
+    this.props.fetchUser();
+  }
+
   render() {
     return (
-      <BrowserRouter>
-         
-            
-            <Switch>
-              <Route path="/" component={Landing} exact/>
-              <Route path="/view" component={View} />
-              <Route path ="/missingForm" component={MissingForm}/>
-              <Route path = "/case/:case_id" component={Case}/>
-              <Route path="/Login" component={Login} />
-               <Route path="/Signup" component={Signup} />
-                <Route path="/case" component={Case}/>
-              <Route component={Errors} />
 
-            </Switch>
-       
-      </BrowserRouter>
+      <div>
+        <BrowserRouter>
+
+            <div>
+                <Header />
+                <Route path="/" component={Landing} exact/>
+                <Route path="/profile" component={Profile} />
+                <Route path="/view" component={View} />
+                <Route path ="/missingForm" component={MissingForm}/>
+                <Route path = "/case/:case_id" component={Case}/>
+                <Route path="/Login" component={Login} />
+                <Route path="/Signup" component={Signup} />
+                <Route path="/case" component={Case}/>
+
+              </div>
+        </BrowserRouter>
+      </div>
+
     );
   }
 
@@ -42,4 +50,4 @@ class App extends Component {
 
 
 
-export default App;
+export default connect(null, actions)(App);
