@@ -1,6 +1,6 @@
 
 @import url('https://fonts.googleapis.com/css?family=Raleway');
-
+@import url('https://fonts.googleapis.com/css?family=Major+Mono+Display|Roboto+Mono');
 body{
 	margin: 0px;
 	padding: 0px;
@@ -34,6 +34,24 @@ h1 .title {
 
 }
 
+nav .brand-logo{
+  font-size: 35px;
+  font-family: 'Roboto Mono', monospace;
+  letter-spacing: 3px;
+}
+nav .brand-logo:hover{
+  color:black;
+}
+
+nav ul a{
+ 
+   font-size: 15px;
+}
+
+nav ul a:hover{
+   color:red;
+   font-size: 15px;
+}
 
 .title{
   width: 50%;
@@ -49,12 +67,19 @@ h1 .title {
   background-position: center;
   background-attachment: fixed;
   margin:0px;
-  padding: 23%;
-  border-top: #e62e00 2px solid;
+  padding: 27%;
+ }
 
 
+.nav-wrapper{
+  border-bottom:#e62e00 2.5px solid;
+  background-color: #757575;
 
 }
+
+
+
+
  h1{
   font-family: 'Raleway', sans-serif;
   text-align: left;
@@ -128,13 +153,21 @@ button:hover{
   width: 70%;
   color: white;
   position:absolute;
+  font-family: 'Roboto Mono', monospace;
 
 
 }
 
-.quotes{
-  font-family: 'Raleway', sans-serif;
+.views{
+  background-image:url("../images/under.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  
+  padding: 27%;
 }
+
+
 
 span{
   color:#e62e00;
