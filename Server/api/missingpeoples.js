@@ -25,14 +25,17 @@ router.get('/', async (req,res) => {
 /***  Add a tip for a missing people record       ***/
 router.post('/add', async(req,res) => {
   const { firstName, lastName, caseNumber, tipGiverId, tip } = req.body;
-  console.log(req.body);
+  // console.log(req.user);
+  if (!req.user){
+    return res.status(401).send({error:'You must log in!'});
+  }
   const newTip =  await Tip.create({
                             caseNumber: caseNumber,
-                            tipGiverId: tipGiverId,
+                            tipGiverId: req.user.googleId,
                             tip: tip
                         });
   console.log(newTip);
-  
+
   res.status(201).send();
 });
 
