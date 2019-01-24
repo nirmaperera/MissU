@@ -3,6 +3,8 @@ import Cards from "./MissingCards";
 import {connect} from 'react-redux';
 import {addThunk} from "../actions";
 
+import "../styles/Tips.css";
+
 class Case extends Component{
     constructor(props){
         super(props);
@@ -37,17 +39,17 @@ class Case extends Component{
     render(){
         const data = this.props.data ? (
             <div className = "data">
-                <p>First Name: {this.props.data.fields.firstname}</p>
-                <p>Middle Name: {this.props.data.fields.middlename}</p>
-                <p>Last Name: {this.props.data.fields.lastname}</p>
-                <p>Age: {this.props.data.fields.computedmissingmaxage}</p>
-                <p>Date of Last Contact: {this.props.data.fields.dateoflastcontact}</p>
-                <p>City of Last Contact: {this.props.data.fields.cityoflastcontact}</p>
-                <p>Country of Last Contact: {this.props.data.fields.countydisplaynameoflastcontact}</p>
-                <p>Race/Ethnicity: {this.props.data.fields.raceethnicity}</p>
-                <p>State of Last Contact: {this.props.data.fields.statedisplaynameoflastcontact}</p>
-                <p>Gender: {this.props.data.fields.gender}</p>
-                <p>Case Number: {this.props.data.fields.namus2number}</p>
+                <p><strong>First Name:</strong> {this.props.data.fields.firstname}</p>
+                <p><strong>Middle Name: </strong>{this.props.data.fields.middlename}</p>
+                <p><strong>Last Name:</strong> {this.props.data.fields.lastname}</p>
+                <p><strong>Age:</strong> {this.props.data.fields.computedmissingmaxage}</p>
+                <p><strong>Date of Last Contact:</strong> {this.props.data.fields.dateoflastcontact}</p>
+                <p><strong>City of Last Contact:</strong> {this.props.data.fields.cityoflastcontact}</p>
+                <p><strong>Country of Last Contact:</strong> {this.props.data.fields.countydisplaynameoflastcontact}</p>
+                <p><strong>Race/Ethnicity:</strong> {this.props.data.fields.raceethnicity}</p>
+                <p><strong>State of Last Contact: </strong>{this.props.data.fields.statedisplaynameoflastcontact}</p>
+                <p><strong>Gender:</strong> {this.props.data.fields.gender}</p>
+                <p><strong>Case Number: </strong>{this.props.data.fields.namus2number}</p>
 
             </div>
         ):(
@@ -56,11 +58,14 @@ class Case extends Component{
 
         return (
             <div>
+                <h1 className="tip-title"> Have you seen {this.props.data.fields.firstname}?</h1>
+                 <div className="tip-wrapper">
                 <h4>{data}</h4>
-                <form id="tip-form" onSubmit={this.handleAdd}>
+                <form className="data" onSubmit={this.handleAdd}>
                     <textarea form="tip-form" col="19" rows="8" placeholder="Add a tip here" onChange={this.handleChange.bind(this)} value={this.state.tip}></textarea>
                     <button type="submit" className="tip">Submit</button>
                 </form>
+                </div>
             </div>
         );
 
