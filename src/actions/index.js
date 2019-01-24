@@ -63,7 +63,9 @@ function apiCall(searchParams) {
 //         })
 // }
 function apiForAdd(params){
+
         let urltopost = `/api/missingpeoples/add`;
+
     return urltopost;
 }
 

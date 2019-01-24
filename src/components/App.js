@@ -22,6 +22,7 @@ class App extends Component {
 
   render() {
     return (
+
       <div>
         <BrowserRouter>
 
@@ -34,10 +35,12 @@ class App extends Component {
                 <Route path = "/case/:case_id" component={Case}/>
                 <Route path="/Login" component={Login} />
                 <Route path="/Signup" component={Signup} />
+                <Route path="/case" component={Case}/>
 
               </div>
         </BrowserRouter>
       </div>
+
     );
   }
 
