@@ -19,8 +19,8 @@ class Header extends Component{
     return(
        <nav className="grey">
          <div className="nav-wrapper">
-           <a href="/" className="left brand-logo">
-             MissU
+           <a href="/" className="center brand-logo">
+             Miss<span>U </span>
            </a>
            <ul className="right">
              {this.renderContent()}
