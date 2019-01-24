@@ -27,6 +27,7 @@ class App extends Component {
               <Route path = "/case/:case_id" component={Case}/>
               <Route path="/Login" component={Login} />
                <Route path="/Signup" component={Signup} />
+                <Route path="/case" component={Case}/>
               <Route component={Errors} />
 
             </Switch>
