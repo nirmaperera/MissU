@@ -72,7 +72,10 @@ class MissingForm extends Component{
             <div>
           <form>
             <div>
-                <div className="form">
+               <div className="form-title">
+                  <h1> Search for a Missing Person</h1>
+                </div>
+                <div className="form-Missing">
                 <div>
                     <label htmlFor="firstName" >First Name:</label>
                     <input type="text" placeholder="Corceil" onChange={this.handleChangeFName.bind(this)}/>
@@ -106,7 +109,7 @@ class MissingForm extends Component{
 
                 <div>
                     <label htmlFor="raceethnicity">Race/Ethnicity: </label>
-                    <input type="text" placeholder="Black African American" onChange={this.handleChangeRace.bind(this)}/>
+                    <input type="text" placeholder="Black / African American" onChange={this.handleChangeRace.bind(this)}/>
                 </div>
 
                 <div>
@@ -119,7 +122,7 @@ class MissingForm extends Component{
                     <input type="text" placeholder="Male" onChange={this.handleChangeGender.bind(this)}/>
                 </div>
 
-                <button type="button" className="button" onClick={this.handleSearch.bind(this)}>Search</button>
+                <button type="button" className="button-missing" onClick={this.handleSearch.bind(this)}>Search</button>
               </div>
 
             </div>

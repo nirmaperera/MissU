@@ -49,13 +49,13 @@ class Profile extends Component{
 
 	render(){
 		const allTips = this.state.data.map( (obj) => {
-			 return <li className="collection-item">Case Number: {obj.caseNumber}  Update at:  {obj.updatedAt}</li>
+			 return <li className="collection-item">Case Number: {obj.caseNumber} Tip: {obj.tip} Update at:  {obj.updatedAt} </li>
 		});
 		return(
 		      <div className="App">
-							<ul className="collection with-header"><li class="collection-header"><h4>Welcome, {this.state.nameOfProfile}</h4></li><li class="collection-header"><h4>Tips given:</h4></li>{allTips}</ul>
+							<ul className="collection with-header"><li className="collection-header"><h4>Welcome, {this.state.nameOfProfile}</h4></li><li className="collection-header"><h4>Tips given:</h4></li>{allTips}</ul>
 							<h3>Add More Tips</h3>
-							<a class="btn-floating btn-large waves-effect waves-light red"><i className="material-icons">Add</i></a>
+							<a href="/missingForm" className="btn-floating btn-large waves-effect waves-light red"><i className="material-icons">Add</i></a>
            </div>
         );
 	}

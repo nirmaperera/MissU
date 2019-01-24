@@ -37,7 +37,7 @@ function apiCall(searchParams) {
         url = url + "&refine.dateoflastcontact=" + searchParams.dateoflastcontact;
     }
     if(searchParams.raceethnicity !== ""){
-        const race = searchParams.raceethnicity.split(" ").join("+");
+        const race = searchParams.raceethnicity;
         url = url + "&refine.raceethnicity=" + race;
     }
     if(searchParams.computedmissingmaxage !== ""){

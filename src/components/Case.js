@@ -2,6 +2,7 @@ import React ,{Component} from 'react';
 import Cards from "./MissingCards";
 import {connect} from 'react-redux';
 import {addThunk} from "../actions";
+import {NavLink} from "react-router-dom";
 
 import "../styles/Tips.css";
 
@@ -63,7 +64,7 @@ class Case extends Component{
                 <h4>{data}</h4>
                 <form className="data" onSubmit={this.handleAdd}>
                     <textarea form="tip-form" col="19" rows="8" placeholder="Add a tip here" onChange={this.handleChange.bind(this)} value={this.state.tip}></textarea>
-                    <button type="submit" className="tip">Submit</button>
+                    <button type="submit" className="tip"><NavLink to = "/">Submit</NavLink></button>
                 </form>
                 </div>
             </div>
