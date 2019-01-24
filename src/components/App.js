@@ -33,6 +33,8 @@ class App extends Component {
                 <Route path ="/missingForm" component={MissingForm}/>
                 <Route path = "/case/:case_id" component={Case}/>
                 <Route path="/Login" component={Login} />
+                <route path="case" component={Case} />
+
                 
 
               </div>
